@@ -5,11 +5,16 @@ class InputWidget extends StatelessWidget {
   final IconData iconData;
   final String hint;
   final Widget rightWidget;
+  final bool obscureText;
 
   @protected
   static final Color color = Color.fromRGBO(208, 219, 224, 1);
 
-  InputWidget({@required this.iconData, @required this.hint, this.rightWidget});
+  InputWidget(
+      {@required this.iconData,
+      @required this.hint,
+      this.rightWidget,
+      this.obscureText = false});
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +40,12 @@ class InputWidget extends StatelessWidget {
           Expanded(
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 10),
-                  hintText: hint,
-                  hintStyle: TextStyle(color: color)),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 10),
+                hintText: hint,
+                hintStyle: TextStyle(color: color),
+              ),
+              obscureText: obscureText,
             ),
           ),
           rightWidget != null ? rightWidget : Container()
@@ -53,6 +60,7 @@ class PasswordInputWidget extends InputWidget {
       : super(
             iconData: iconData,
             hint: hint,
+            obscureText: true,
             rightWidget: Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Icon(

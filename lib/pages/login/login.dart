@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:studere/widgets/background_widget.dart';
 import 'package:studere/widgets/input_widget.dart';
 import 'package:studere/widgets/social_login_widget.dart';
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         InputWidget(
                           iconData: Icons.person,
-                          hint: "Usuário ou e-mail",
+                          hint: "E-mail",
                         ),
                         SizedBox(
                           height: 20,
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                                     offset: Offset(0, 5))
                               ]),
                           child: Text(
-                            "ENTRAR",
+                            "Continuar",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -110,20 +111,20 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         SizedBox(
-                          height: 70,
+                          height: 45,
                           child: Container(
                             alignment: Alignment.center,
                             child: Text(
-                              "OU",
+                              "ou",
                               style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 13,
                                   color: Color.fromRGBO(208, 219, 224, 1)),
                             ),
                           ),
                         ),
                         SocialLoginWidget(
-                          iconData: Icons.android,
-                          text: "ENTRAR COM O FACEBOOK",
+                          iconData: FontAwesomeIcons.facebook,
+                          text: "Continuar com Facebook",
                           color: Color.fromRGBO(58, 93, 158, 1),
                         ),
                         SizedBox(height: 20),
